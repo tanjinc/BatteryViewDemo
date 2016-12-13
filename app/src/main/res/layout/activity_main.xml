@@ -4,15 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#ff7732"
     tools:context="com.tanjinc.viewdemo.MainActivity">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"/>
+        <Button
+            android:id="@+id/pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"/>
+    </LinearLayout>
 
     <com.tanjinc.viewdemo.BatteryView
         android:id="@+id/battery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        app:inside_margin="3dp"
+        app:border="4dp"
+        app:mainColor="#777"
+        app:chargingColor="@android:color/holo_blue_light"
+        app:lowPowerColor="@android:color/holo_red_dark"
+        android:layout_below="@+id/battery2"/>
+
+    <com.tanjinc.viewdemo.BatteryView
+        android:id="@+id/battery2"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        app:inside_margin="0dp"
+        app:border="8dp"
+        app:radius="5dp"
+        app:mainColor="#ffff"
+        app:chargingColor="@android:color/holo_green_dark"
+        app:lowPowerColor="@android:color/holo_red_dark"
+        android:visibility="gone"
+        />
+
+
 </RelativeLayout>
